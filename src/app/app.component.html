@@ -1,12 +1,24 @@
+<nav class="navbar bg-dark text-white">
+  <div class="navbar-brand">
+    <h2>{{appHeader | async}}</h2>
+  </div>
+</nav>
 <div class="container">
   <div class="row">
     <div class="col-md-10 offset-md-1">
-      <input type="text" #serverName />
+
+      <input class="form-control" type="text" #serverName />
+      
       <button class="btn btn-primary"
               (click)="onAddServer(serverName.value)">
         Add Server
       </button>
       <hr>
+      <button class="btn btn-primary float-right"
+              (click)="onSaveServers()">
+        Save Servers
+      </button>
+      <br><br>
       <ul class="list-group">
         <li class="list-group-item"
             *ngFor="let server of servers">
